@@ -9,13 +9,23 @@
 <body>
   <div class="container">
     <h1>Path of Exile League Content Comparison</h1>
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th>League Content</th>
-          <th>Uses Scarabs</th>
-          <th>Affected by Sextants</th>
-          <th>Atlas Points</th>
+          <th id='league-name'>League Content</th>
+          <th id='scarab'>Uses Scarabs</th>
+          <th id='sextant'>Affected by Sextants</th>
+          <th id='atlas-pts'>Atlas Points</th>
+          <th id='atlas-side'>Left/Right</th>
+          <th id='chance'>Added Chance / WP Chance</th>
+        </tr>
+        <tr>
+          <td>Breach</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>500</td>
+          <td>Right</td>
+          <td>40/60</td>
         </tr>
       </thead>
       <tbody>
@@ -23,4 +33,37 @@
     </table>
   </div>
 </body>
+
+
+<script>
+  // Your JavaScript filter code here
+
+function handleFilterChange(event) {
+// Get the selected option and column ID
+const selectedOption = event.target.value;
+const columnId = event.target.id.replace('filter-', '');
+
+// Loop through all table rows
+const tableRows = document.querySelectorAll('tr');
+for (let i = 1; i < tableRows.length; i++) { // Skip header row
+  const tableCell = tableRows[i].querySelector(`td[atlas-side="${columnId}"]`);
+  const cellText = tableCell.textContent.trim().toLowerCase();
+
+// Show/hide row based on filter criteria
+if (selectedOption === "All" || cellText.includes(selectedOption.toLowerCase())) {
+  tableRows[i].style.display = "";
+} else {
+  tableRows[i].style.display = "none";
+    }
+  }
+}
+
+// event listener
+const filterSelects = document.querySelectorAll('.atlas-side');
+filterSelects.forEach(select => {
+  select.addEventListener('change', handleFilterChange);
+});
+
+</script>
+
 </html>
