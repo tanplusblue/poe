@@ -71,21 +71,8 @@ function outFunc() {
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copy to clipboard";
 }
-</script>
-  
-<!-- second clip-->  
-  <p></p>
-<input type="text" value="&quot;!ss are|pet|efe|ot s|s rec|'v|s rec|gen|eec|on,&quot;" id="myInput2">
 
-<div class="tooltip">
-<button onclick="myFunction()" onmouseout="outFunc()">
-  <span class="tooltiptext" id="myTooltip2">2nd Copy to clipboard</span>
-  Copy text 2
-  </button>
-</div>
-
-<script>
-function myFunction() {
+  function myFunction2() {
   var copyText = document.getElementById("myInput2");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
@@ -95,10 +82,23 @@ function myFunction() {
   tooltip.innerHTML = "Copied: " + copyText.value;
 }
 
-function outFunc() {
+function outFunc2() {
   var tooltip = document.getElementById("myTooltip2");
   tooltip.innerHTML = "Copy to clipboard";
 }
 </script>
+  
+<!-- second clip-->  
+  <p></p>
+<input type="text" value="&quot;!ss are|pet|efe|ot s|s rec|'v|s rec|gen|eec|on,&quot;" id="myInput2">
+
+<div class="tooltip">
+<button onclick="myFunction()" onmouseout="outFunc2()">
+  <span class="tooltiptext" id="myTooltip2">2nd Copy to clipboard</span>
+  Copy text 2
+  </button>
+</div>
+
+  
 </body>
 </html>
