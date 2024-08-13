@@ -79,7 +79,7 @@ function outFunc() {
 
 <div class="tooltip">
 <button onclick="myFunction()" onmouseout="outFunc()">
-  <span class="tooltiptext" id="myTooltip">2nd Copy to clipboard</span>
+  <span class="tooltiptext" id="myTooltip2">2nd Copy to clipboard</span>
   Copy text 2
   </button>
 </div>
@@ -91,12 +91,12 @@ function myFunction() {
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
   
-  var tooltip = document.getElementById("myTooltip");
+  var tooltip = document.getElementById("myTooltip2");
   tooltip.innerHTML = "Copied: " + copyText.value;
 }
 
 function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
+  var tooltip = document.getElementById("myTooltip2");
   tooltip.innerHTML = "Copy to clipboard";
 }
 </script>
